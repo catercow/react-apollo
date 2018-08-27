@@ -29,7 +29,6 @@ build/Release
 node_modules
 
 # don't commit compiled files
-lib
 test-lib
 dist
 npm
