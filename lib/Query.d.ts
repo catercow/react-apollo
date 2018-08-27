@@ -10,7 +10,7 @@ export declare type ObservableQueryFields<TData, TVariables> = Pick<ObservableQu
 };
 export interface QueryResult<TData = any, TVariables = OperationVariables> extends ObservableQueryFields<TData, TVariables> {
     client: ApolloClient<any>;
-    data: TData | {};
+    data: Partial<TData>;
     error?: ApolloError;
     loading: boolean;
     networkStatus: NetworkStatus;
