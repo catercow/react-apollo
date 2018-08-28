@@ -139,8 +139,6 @@ export function walkTree(
         return;
       }
       const isProvider = !!(element.type as any)._context;
-
-      let isProvider = !!(element.type as any)._context;
       let previousContextValue: any;
       if (isProvider) {
         previousContextValue = ((element.type as any)._context as any)._currentValue;
