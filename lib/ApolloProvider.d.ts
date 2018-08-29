@@ -13,7 +13,6 @@ export interface ApolloProviderContext {
         query: DocumentNode;
         variables: any;
     }>;
-    subContexts?: Map<any, any>;
 }
 export default class ApolloProvider<TCache> extends Component<ApolloProviderProps<TCache>> {
     static propTypes: {
@@ -23,14 +22,12 @@ export default class ApolloProvider<TCache> extends Component<ApolloProviderProp
     static childContextTypes: {
         client: PropTypes.Validator<object>;
         operations: PropTypes.Requireable<object>;
-        subContexts: PropTypes.Requireable<object>;
     };
     private operations;
     constructor(props: ApolloProviderProps<TCache>, context: any);
     getChildContext(): {
         client: ApolloClient<TCache>;
         operations: any;
-        subContexts: Map<any, any>;
     };
     render(): React.ReactNode;
 }
