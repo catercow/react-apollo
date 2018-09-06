@@ -17,7 +17,7 @@ export interface ApolloProviderContext {
 export default class ApolloProvider<TCache> extends Component<ApolloProviderProps<TCache>> {
     static propTypes: {
         client: PropTypes.Validator<object>;
-        children: PropTypes.Validator<string | number | boolean | {} | import("prop-types/node_modules/@types/react").ReactElement<any> | import("prop-types/node_modules/@types/react").ReactNodeArray | import("prop-types/node_modules/@types/react").ReactPortal>;
+        children: PropTypes.Validator<string | number | boolean | {} | React.ReactElement<any> | React.ReactNodeArray | React.ReactPortal>;
     };
     static childContextTypes: {
         client: PropTypes.Validator<object>;
