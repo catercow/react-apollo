@@ -76,4 +76,5 @@ export default class Query<TData = any, TVariables = OperationVariables> extends
     private resubscribeToQuery;
     private updateCurrentData;
     private getQueryResult;
+    private prepareCurrentResultData;
 }
