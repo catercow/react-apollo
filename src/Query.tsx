@@ -353,8 +353,10 @@ export default class Query<TData = any, TVariables = OperationVariables> extends
       Object.assign(data.data, this.previousData, currentResult.data);
     } else if (error) {
       const lastResult = this.queryObservable!.getLastResult();
-      if (lastResult) {
-        Object.assign(data.data, lastResult.data);
+      if (lastResult && lastResult.data) {
+        Object.assign(data, {
+          data: lastResult.data,
+        });
       }
     } else {
       Object.assign(data.data, currentResult.data);
